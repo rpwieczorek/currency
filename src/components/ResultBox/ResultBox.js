@@ -16,8 +16,8 @@ const ResultBox = ({ from, to, amount }) => {
   const formattedAmount = useMemo(() => formatAmountInCurrency(amount, from), [amount, from]);
 
   return (
-    <div className={styles.result}>
-      {formattedAmount} = {convertedAmount}
+    <div data-testid="output" className={styles.result}>
+      {amount<0 ? 'Wrong value...' : formattedAmount + ' = ' + convertedAmount}
     </div>
   );
 };
